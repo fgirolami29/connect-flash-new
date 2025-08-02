@@ -1,25 +1,32 @@
 # connect-flash-new
 
-<p align="right">
-  <a href="https://github.com/fgirolami29/connect-flash-new/stargazers">
-    <img src="https://img.shields.io/github/stars/fgirolami29/connect-flash-new?style=social" alt="Star on GitHub">
-  </a>
-  <a href="https://www.npmjs.com/package/connect-flash-new">
-    <img src="https://img.shields.io/npm/v/connect-flash-new.svg" alt="npm version">
-  </a>
-  <a href="https://github.com/fgirolami29/connect-flash-new/issues">
-    <img src="https://img.shields.io/github/issues/fgirolami29/connect-flash-new.svg" alt="open issues">
-  </a>
-  <a href="https://github.com/fgirolami29/connect-flash-new/actions">
-    <img src="https://github.com/fgirolami29/connect-flash-new/actions/workflows/test.yml/badge.svg" alt="CI Status">
-  </a>
-  <a href="https://github.com/fgirolami29/connect-flash-new/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/fgirolami29/connect-flash-new.svg" alt="contributors">
-  </a>
-</p>
+<div style="display: flex;align-items: center">
+<div style="width:60%">
 
-> A modern, type-safe, and fully compatible flash messaging middleware for Express.
-> This project is a clean reimplementation of the original `connect-flash` — actively maintained by the community, for the community.
+  > A modern, type-safe, and fully compatible flash messaging middleware for Express.
+  > This project is a clean reimplementation of the original `connect-flash` — actively maintained by the community, for the community.
+
+</div>
+  <div style="width:40%">
+    <p align="right">
+      <a href="https://github.com/fgirolami29/connect-flash-new/stargazers">
+        <img src="https://img.shields.io/github/stars/fgirolami29/connect-flash-new?style=social" alt="Star on GitHub">
+      </a>
+      <a href="https://www.npmjs.com/package/connect-flash-new">
+        <img src="https://img.shields.io/npm/v/connect-flash-new.svg" alt="npm version">
+      </a>
+      <a href="https://github.com/fgirolami29/connect-flash-new/issues">
+        <img src="https://img.shields.io/github/issues/fgirolami29/connect-flash-new.svg" alt="open issues">
+      </a>
+      <a href="https://github.com/fgirolami29/connect-flash-new/actions">
+        <img src="https://github.com/fgirolami29/connect-flash-new/actions/workflows/test.yml/badge.svg" alt="CI Status">
+      </a>
+      <a href="https://github.com/fgirolami29/connect-flash-new/graphs/contributors">
+        <img src="https://img.shields.io/github/contributors/fgirolami29/connect-flash-new.svg" alt="contributors">
+      </a>
+    </p>
+  </div>
+</div>
 
 ---
 
