@@ -3,7 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const flash = require('../lib');
 
-describe('connect-flash-new', () => {
+describe('@codecorn/connect-flash-new', () => {
   it('should store and retrieve flash messages', async () => {
     const app = express();
     app.use(session({ secret: 'test', resave: false, saveUninitialized: true }));

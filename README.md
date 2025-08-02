@@ -43,7 +43,7 @@
 ## 📦 Installation
 
 ```bash
-npm install connect-flash-new
+npm install @codecorn/connect-flash-new
 ```
 
 ---
@@ -54,12 +54,12 @@ npm install connect-flash-new
 // ✅ ESM / TypeScript
 import express from 'express';
 import session from 'express-session';
-import flash from 'connect-flash-new';
+import flash from '@codecorn/connect-flash-new';
 
 // ✅ CommonJS (require)
 const express = require('express');
 const session = require('express-session');
-const flash = require('connect-flash-new');
+const flash = require('@codecorn/connect-flash-new');
 
 const app = express();
 
@@ -81,13 +81,13 @@ app.get('/', (req, res) => {
 import request from 'supertest';
 import express from 'express';
 import session from 'express-session';
-import flash from 'connect-flash-new';
+import flash from '@codecorn/connect-flash-new';
 
 // ✅ CommonJS
 const request = require('supertest');
 const express = require('express');
 const session = require('express-session');
-const flash = require('connect-flash-new');
+const flash = require('@codecorn/connect-flash-new');
 
 const app = express();
 app.use(session({ secret: 'test', resave: false, saveUninitialized: true }));
