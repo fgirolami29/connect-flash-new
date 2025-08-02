@@ -12,8 +12,8 @@
       <a href="https://github.com/fgirolami29/connect-flash-new/stargazers">
         <img src="https://img.shields.io/github/stars/fgirolami29/connect-flash-new?style=social" alt="Star on GitHub">
       </a>
-      <a href="https://www.npmjs.com/package/connect-flash-new">
-        <img src="https://img.shields.io/npm/v/connect-flash-new.svg" alt="npm version">
+      <a href="https://www.npmjs.com/package/@codecorn/connect-flash-new">
+        <img src="https://img.shields.io/npm/v/@codecorn/connect-flash-new" alt="npm version">
       </a>
       <a href="https://github.com/fgirolami29/connect-flash-new/issues">
         <img src="https://img.shields.io/github/issues/fgirolami29/connect-flash-new.svg" alt="open issues">
@@ -27,6 +27,7 @@
     </p>
   </div>
 </div>
+
 
 ---
 
