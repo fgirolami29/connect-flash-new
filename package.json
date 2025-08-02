@@ -1,6 +1,6 @@
 {
     "name": "@codecorn/connect-flash-new",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Modern, type-safe Express flash middleware maintained by CodeCorn.",
     "keywords": [
         "express",
