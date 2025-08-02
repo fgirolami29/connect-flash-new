@@ -1,4 +1,4 @@
-name: Test
+name: CI Test
 
 on:
   push:
@@ -15,10 +15,17 @@ jobs:
         node-version: [18.x, 20.x]
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🔧 Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm test
+          cache: 'npm'  # 🔁 migliora velocità (cache node_modules)
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🧪 Run tests
+        run: npm test

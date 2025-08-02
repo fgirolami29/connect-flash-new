@@ -3,8 +3,8 @@
 <div style="display: flex;align-items: center">
 <div style="width:60%">
 
-  > A modern, type-safe, and fully compatible flash messaging middleware for Express.
-  > This project is a clean reimplementation of the original `connect-flash` — actively maintained by the community, for the community.
+> A modern, type-safe, and fully compatible flash messaging middleware for Express.
+> This project is a clean reimplementation of the original `connect-flash` — actively maintained by the community, for the community.
 
 </div>
   <div style="width:40%">
@@ -28,16 +28,15 @@
   </div>
 </div>
 
-
 ---
 
 ## ✨ Features
 
-- 🔐 Safe flash message handling via session
-- 🧠 TypeScript-ready (`.d.ts` included)
-- ♻️ Fully compatible with CommonJS (`require`) and ES Modules (`import`)
-- 🧪 Easy to test (with `supertest`)
-- 🔥 Drop-in replacement for deprecated `connect-flash`
+-   🔐 Safe flash message handling via session
+-   🧠 TypeScript-ready (`.d.ts` included)
+-   ♻️ Fully compatible with CommonJS (`require`) and ES Modules (`import`)
+-   🧪 Easy to test (with `supertest`)
+-   🔥 Drop-in replacement for deprecated `connect-flash`
 
 ---
 
@@ -68,8 +67,8 @@ app.use(session({ secret: 'secret', resave: false, saveUninitialized: true }));
 app.use(flash());
 
 app.get('/', (req, res) => {
-  req.flash('info', 'Welcome back %s!', 'Federico');
-  res.send(req.flash('info'));
+    req.flash('info', 'Welcome back %s!', 'Federico');
+    res.send(req.flash('info'));
 });
 ```
 
@@ -95,15 +94,64 @@ app.use(session({ secret: 'test', resave: false, saveUninitialized: true }));
 app.use(flash());
 
 app.get('/test', (req, res) => {
-  req.flash('info', 'Test Message');
-  res.json({ messages: req.flash('info') });
+    req.flash('info', 'Test Message');
+    res.json({ messages: req.flash('info') });
 });
 
 test('should return flash message', async () => {
-  const res = await request(app).get('/test');
-  expect(res.body.messages).toContain('Test Message');
+    const res = await request(app).get('/test');
+    expect(res.body.messages).toContain('Test Message');
 });
 ```
+
+---
+
+## 🔐 Safe Init Helper (Optional)
+
+If you want a one-liner to safely initialize both `cookie-parser` and `connect-flash-new`, you can use our helper:
+
+```js
+const express = require('express');
+const session = require('express-session');
+const { safeFlashInit } = require('@codecorn/connect-flash-new/helpers');
+
+const app = express();
+app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: true }));
+
+safeFlashInit(app); // Will use process.env.SESSION_SECRET or throw a warning
+```
+
+---
+
+## 🧪 Experimental: `flashMessages` Middleware (Preview)
+
+In alternativa al classico `flash()`, puoi usare `flashMessages` per accedere ai messaggi flash direttamente in `res.locals.sessionFlash`.
+Questa funzionalità è **opt-in** e può essere abilitata nel tuo `.env` o in modo programmatico:
+
+```js
+// lib/flashMessages.js
+import { flashMessages } from '@codecorn/connect-flash-new';
+
+app.use(flashMessages);
+```
+
+### 🔧 Attivazione condizionata via `.env`
+
+Puoi attivarlo dinamicamente leggendo da `.env`:
+
+```js
+if (process.env.ENABLE_FLASH_MESSAGES === 'true') {
+    app.use(flashMessages);
+}
+```
+
+Questo middleware:
+
+-   🔄 Passa i messaggi da `req.session.flash` a `res.locals.sessionFlash`
+-   🧼 Svuota la sessione per evitare messaggi duplicati/zombie
+-   🛡️ Inizializza `req.session.flash` se mancante
+
+> ⚠️ In fase sperimentale — potrà evolvere con il feedback della community.
 
 ---
 
