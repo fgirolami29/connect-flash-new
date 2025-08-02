@@ -1,7 +1,7 @@
 const request = require('supertest');
 const express = require('express');
 const session = require('express-session');
-const flash = require('@codecorn/connect-flash-new');
+const flash = require('../lib/flash.js');
 
 describe('connect-flash-new', () => {
   it('should store and retrieve flash messages', async () => {
